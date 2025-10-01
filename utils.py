@@ -57,15 +57,14 @@ class BUSCOFactory:
     def get_busco_data(self):
 
         dfs = []
-        paths = list(glob.glob(f"final_analysis/*/*/*/busco/run_*/full_table.tsv"))
-        paths += list(glob.glob(f"final_analysis/*/*/busco/run_bacteria_odb10/full_table.tsv"))
+        paths = list(glob.glob(f"metadata_busco_checkm/*/*/full_table.tsv"))
+
         for path in tqdm(paths):
             try:
                 b = BUSCO(path)
-                _, exp, assembler, sample, _, _, _ = path.split("/")
+                _, exp, assembler,_ = path.split("/")
                 df = b.summary()
                 df['exp'] = exp
-                df['sample'] = sample
                 if assembler == 'lora':
                     df['assembler'] = 'canu'
                 else:
@@ -108,13 +107,13 @@ class CheckMFactory:
         }
 
     def plot_checkm_summary_bar(self, name):
-        assemblers = [x.split("/")[2] for x in glob.glob(f'final_analysis/{name}/*/*/checkm/results.txt')]
-        samples = [x.split("/")[3] for x in glob.glob(f'final_analysis/{name}/*/*/checkm/results.txt')]
+        assemblers = [x.split("/")[2] for x in glob.glob(f'metadata_busco_checkm/{name}/*//results.txt')]
+        #samples = [x.split("/")[3] for x in glob.glob(f'final_analysis/{name}/*/*/checkm/results.txt')]
 
         c = checkm.MultiCheckM(glob.glob(f'final_analysis/{name}/*/*/checkm/results.txt'))
         c.df.columns = [x.replace("_nocirc", "").replace("_circ", " circ") for x in assemblers]
         df_grouped = c.df.T
-        df_grouped["sample"] = samples
+        #df_grouped["sample"] = samples
         df_grouped['assembler'] = df_grouped.index
         df_grouped = df_grouped[["assembler", "Completeness", "Contamination" , "Strain heterogeneity"]]
         df_grouped.groupby("assembler")[["Completeness", "Contamination", "Strain heterogeneity"]].sum()
