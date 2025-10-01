@@ -292,3 +292,112 @@ def download_streptococcus_data():
 
     download_SRR_with_progress("SRR24332397", "data/streptococcus", 7.08e9)
 
+
+
+def download_leishmania_data():
+    os.makedirs("data/leishmania", exist_ok=True)
+    download_SRR_with_progress("SRR13558805", "data/leishmania", 5.08e9)
+
+
+
+def download_bacteroides_data():
+
+    os.makedirs("data/bacteroides_fragilis", exist_ok=True)
+    DIR = "data/bacteroides_fragilis"
+
+    FILE = "nBFO17.fastq.gz"
+    fout = f"{DIR}/{FILE}"
+    if os.path.exists(fout) is False:
+        file1 = f"{DIR}/BFO17_TVS_01_97673.barcode02_trimmed.fastq.gz"
+        file2 = f"{DIR}/BFO17_TVS_03_99377.barcode02_trimmed.fastq.gz"
+        download_data("https://zenodo.org/records/2677927/files/BFO17_TVS_01_97673.barcode02_trimmed.fastq.gz", "data/bacteroides_fragilis")
+        download_data("https://zenodo.org/records/2677927/files/BFO17_TVS_03_99377.barcode02_trimmed.fastq.gz", "data/bacteroides_fragilis")
+        with open(fout, "w") as fout:
+            subprocess.run(f"cat {file1} {file2}".split(), stdout=fout, check=True)
+    else:
+        print(f"✅ {FILE} already exists, skipping.")
+
+    FILE = "nBFO18.fastq.gz"
+    fout = f"{DIR}/{FILE}"
+    if os.path.exists(fout) is False:
+        file1 = f"{DIR}/BFO18_TVS_01_97673.barcode03_trimmed.fastq.gz"
+        file2 = f"{DIR}/BFO18_TVS_03_99377.barcode03_trimmed.fastq.gz"
+        download_data("https://zenodo.org/records/2677927/files/BFO18_TVS_01_97673.barcode03_trimmed.fastq.gz", "data/bacteroides_fragilis")
+        download_data("https://zenodo.org/records/2677927/files/BFO18_TVS_03_99377.barcode03_trimmed.fastq.gz", "data/bacteroides_fragilis")
+        with open(fout, "w") as fout:
+            subprocess.run(f"cat {file1} {file2}".split(), stdout=fout, check=True)
+    else:
+        print(f"✅ {FILE} already exists, skipping.")
+
+    FILE = "nBFO42.fastq.gz"
+    fout = f"{DIR}/{FILE}"
+    if os.path.exists(fout) is False:
+        file1 = f"{DIR}/BFO42_TVS_02.barcode10_trimmed.fastq.gz"
+        file2 = f"{DIR}/BFO42_TVS_04.barcode10_trimmed.fastq.gz"
+        download_data("https://zenodo.org/records/2677927/files/BFO42_TVS_02.barcode10_trimmed.fastq.gz", "data/bacteroides_fragilis")
+        download_data("https://zenodo.org/records/2677927/files/BFO42_TVS_04.barcode10_trimmed.fastq.gz", "data/bacteroides_fragilis")
+        with open(fout, "w") as fout:
+            subprocess.run(f"cat {file1} {file2}".split(), stdout=fout, check=True)
+    else:
+        print(f"✅ {FILE} already exists, skipping.")
+
+    FILE = "nBFO67.fastq.gz"
+    fout = f"{DIR}/{FILE}"
+    if os.path.exists(fout) is False:
+        file1 = f"{DIR}/BFO67_TVS_02.barcode09_trimmed.fastq.gz"
+        file2 = f"{DIR}/BFO67_TVS_04.barcode09_trimmed.fastq.gz"
+        download_data("https://zenodo.org/records/2677927/files/BFO67_TVS_02.barcode09_trimmed.fastq.gz", "data/bacteroides_fragilis")
+        download_data("https://zenodo.org/records/2677927/files/BFO67_TVS_04.barcode09_trimmed.fastq.gz", "data/bacteroides_fragilis")
+        with open(fout, "w") as fout:
+            subprocess.run(f"cat {file1} {file2}".split(), stdout=fout, check=True)
+    else:
+        print(f"✅ {FILE} already exists, skipping.")
+
+    FILE = "nBFO85.fastq.gz"
+    fout = f"{DIR}/{FILE}"
+    if os.path.exists(fout) is False:
+        file1 = f"{DIR}/BFO85_TVS_02.barcode08_trimmed.fastq.gz"
+        file2 = f"{DIR}/BFO85_TVS_04.barcode08_trimmed.fastq.gz"
+        download_data("https://zenodo.org/records/2677927/files/BFO85_TVS_02.barcode08_trimmed.fastq.gz", "data/bacteroides_fragilis")
+        download_data("https://zenodo.org/records/2677927/files/BFO85_TVS_04.barcode08_trimmed.fastq.gz", "data/bacteroides_fragilis")
+        with open(fout, "w") as fout:
+            subprocess.run(f"cat {file1} {file2}".split(), stdout=fout, check=True)
+    else:
+        print(f"✅ {FILE} already exists, skipping.")
+
+    FILE = "nCCUG4856T.fastq.gz"
+    fout = f"{DIR}/{FILE}"
+    if os.path.exists(fout) is False:
+        file1 = f"{DIR}/CCUG4856T_TVS_01_97673.barcode01_trimmed.fastq.gz"
+        # NOTE THE TYPE ON ZENODO for the second file BUT THIS IS THE SAME SAMPLE
+        file2 = f"{DIR}/CCUG5846T_TVS_03_99377.barcode01_trimmed.fastq.gz"
+        download_data("https://zenodo.org/records/2677927/files/CCUG4856T_TVS_01_97673.barcode01_trimmed.fastq.gz", "data/bacteroides_fragilis")  
+        download_data("https://zenodo.org/records/2677927/files/CCUG5846T_TVS_03_99377.barcode01_trimmed.fastq.gz", "data/bacteroides_fragilis")
+        with open(fout, "w") as fout:
+            subprocess.run(f"cat {file1} {file2}".split(), stdout=fout, check=True)
+    else:
+        print(f"✅ {FILE} already exists, skipping.")
+
+
+    FILE = "nS01.fastq.gz"
+    fout = f"{DIR}/{FILE}"
+    if os.path.exists(fout) is False:
+        file1 = f"{DIR}/S01_TVS_01_97673.barcode04_trimmed.fastq.gz"
+        file2 = f"{DIR}/S01_TVS_03_99377.barcode04_trimmed.fastq.gz"
+
+        download_data("https://zenodo.org/records/2677927/files/S01_TVS_01_97673.barcode04_trimmed.fastq.gz", "data/bacteroides_fragilis")
+        download_data("https://zenodo.org/records/2677927/files/S01_TVS_03_99377.barcode04_trimmed.fastq.gz", "data/bacteroides_fragilis")
+        with open(fout, "w") as fout:
+            subprocess.run(f"cat {file1} {file2}".split(), stdout=fout, check=True)
+    else:
+        print(f"✅ {FILE} already exists, skipping.")
+
+    # cleanup 
+    cmd = f"rm {DIR}/*TVS*gz"
+    try:
+        subprocess.run(cmd, check=False, shell=True)
+    except:
+        pass
+
+
+
