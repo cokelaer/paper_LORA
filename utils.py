@@ -1,0 +1,203 @@
+# Author: Thomas Cokelaer, 2025
+import glob
+from tqdm import tqdm
+import pandas as pd
+from pylab import savefig, tight_layout, legend, xlim, xlabel, ylabel, axvline, xticks, yticks, gca
+from sequana import checkm, FastA, FastQ, BUSCO
+import subprocess
+
+
+genome_size = {
+    "veillonella": 2146482,
+    "streptococcus" :  2210410,
+    "bacteroide": 5205140,
+    "cyanobacteria": 4.4e6,
+    "leishmania": 33.5e6
+}
+
+def download_data(url, dest_dir="data/"):
+    cmd = f"wget -q -P {dest_dir} {url}"
+    subprocess.call(cmd.split())
+
+def saveall(filename):
+    for ext in ["png", "pdf", "eps"]:
+        savefig(f"{filename}.{ext}", dpi=200)
+
+def to_seconds(x):
+    if "-" in x:
+        D = x.split("-")[0]
+        x = x.split("-")[1]
+    else:
+        D = 0
+    H, M, S = x.split(":")
+
+    return int(S) + int(M)*60 + int(H)*3600 + int(D)*3600*60
+
+
+class BUSCOFactory:
+    def __init__(self):
+
+        self.colors = {
+            "Complete": "green",
+            "Missing": "red",
+            "Duplicated": "orange",
+            "Fragmented": "pink"
+        }
+        self.get_busco_data()
+
+    def get_busco_data(self):
+
+        dfs = []
+        paths = list(glob.glob(f"final_analysis/*/*/*/busco/run_*/full_table.tsv"))
+        paths += list(glob.glob(f"final_analysis/*/*/busco/run_bacteria_odb10/full_table.tsv"))
+        for path in tqdm(paths):
+            try:
+                b = BUSCO(path)
+                _, exp, assembler, sample, _, _, _ = path.split("/")
+                df = b.summary()
+                df['exp'] = exp
+                df['sample'] = sample
+                if assembler == 'lora':
+                    df['assembler'] = 'canu'
+                else:
+                    df['assembler'] = assembler.replace("_nocirc", "").replace("_circ", " circ")
+                df['circlator'] = False if 'nocirc' in assembler else True
+                dfs.append(pd.Series(df))
+            except Exception as err:
+                print(path)
+                print(err)
+        self.busco_df = pd.concat(dfs ,axis=1).T
+
+    def plot_busco_summary_bar(self, name):
+        df_grouped = self.busco_df.query("exp==@name").groupby("assembler")[["S_pc", "D_pc", "F_pc", "M_pc"]].sum()
+        df_grouped = df_grouped.iloc[::-1]
+        df_grouped = df_grouped.rename(
+        columns={"F_pc": "Fragmented", "D_pc": "Duplicated", "S_pc": "Complete", "M_pc": "Missing"}
+    )
+        df_grouped.plot(
+            kind="barh",
+            stacked=True,
+            figsize=(8, 6),
+            fontsize=12,
+            color = [self.colors[col] for col in df_grouped.columns if col!= "assembler"],
+            width=0.8
+        )
+        legend(loc="upper left")
+        xlim([0,100])
+        _ = xlabel("Percentage (%)", fontsize=16)
+        _ = ylabel("Assembler", fontsize=16)
+        tight_layout()
+
+
+class CheckMFactory:
+
+    def __init__(self):
+        self.colors = {
+            "Completeness": "green",
+            "Contamination": "orange",
+            "Strain heterogeneity": "pink",
+        }
+
+    def plot_checkm_summary_bar(self, name):
+        assemblers = [x.split("/")[2] for x in glob.glob(f'final_analysis/{name}/*/*/checkm/results.txt')]
+        samples = [x.split("/")[3] for x in glob.glob(f'final_analysis/{name}/*/*/checkm/results.txt')]
+
+        c = checkm.MultiCheckM(glob.glob(f'final_analysis/{name}/*/*/checkm/results.txt'))
+        c.df.columns = [x.replace("_nocirc", "").replace("_circ", " circ") for x in assemblers]
+        df_grouped = c.df.T
+        df_grouped["sample"] = samples
+        df_grouped['assembler'] = df_grouped.index
+        df_grouped = df_grouped[["assembler", "Completeness", "Contamination" , "Strain heterogeneity"]]
+        df_grouped.groupby("assembler")[["Completeness", "Contamination", "Strain heterogeneity"]].sum()
+        df_grouped = df_grouped.iloc[::-1]
+
+        df_grouped.plot(
+            kind="barh",
+            stacked=True,
+            figsize=(8, 6),
+            fontsize=12,
+            color = [self.colors[col] for col in df_grouped.columns if col!= "assembler"],
+            width=0.8
+        )
+        legend(loc="upper left")
+        xlim([0,100])
+        _ = xlabel("Percentage (%)", fontsize=16)
+        _ = ylabel("Assembler", fontsize=16)
+        tight_layout()
+
+
+class PlotContigs:
+    def __init__(self, name):
+        self.name = name
+        self.df = self._get_contigs_df(name)
+
+    def _get_contigs_df(self,name):
+        assemblers = [x.split("/")[2] for x in glob.glob(f'final_analysis/{name}/*/*/sorted_contigs/*.fasta')]
+        samples = [x.split("/")[3] for x in glob.glob(f'final_analysis/{name}/*/*/sorted_contigs/*fasta')]
+        filenames = glob.glob(f'final_analysis/{name}/*/*/sorted_contigs/*fasta')
+        data = []
+        for filename in filenames:
+            f = FastA(filename)
+            N = sorted(f.get_lengths_as_dict().values())
+            sample = filename.split("/")[2]
+            assembler = filename.split("/")[3]
+            for x in N:
+                data.append([sample, assembler, x])
+
+        df = pd.DataFrame(data)
+        df.columns = ["assembler", "sample", "length"]
+
+        if name == "leishmania":
+            for assembler in ['canu','flye','hifiasm','necat','pecat','unicycler']:
+                missing = f"{assembler}" 
+                if missing not in df['assembler'].values:
+                    df.loc[len(df)] = [missing, "none", 0]
+        else:
+            for assembler in ['canu','flye','hifiasm','necat','pecat','unicycler']:
+                for x in ['circ','nocirc']:
+                    missing = f"{assembler}_{x}" 
+                    if missing not in df['assembler'].values:
+                        df.loc[len(df)] = [missing, "none", 0]
+            df['assembler'] = [x.replace("_nocirc", "").replace("_circ", " circ.") for x in df['assembler']]
+        return df
+
+    def plot_assembly_results(self):
+        
+        df_sorted = self.df.sort_values(["assembler", "length"], ascending=[True, False])
+
+        pivot = (
+            df_sorted
+            .assign(rn=df_sorted.groupby("assembler").cumcount())  # position of each value
+            .pivot(index="assembler", columns="rn", values="length")
+            .fillna(0)
+        )
+
+        # plot stacked bars
+        pivot.plot(kind="barh", zorder=10,
+                stacked=True, 
+                figsize=(8,5),
+                legend=False,
+                edgecolor="none" )
+        xlabel("Total contig length (bp)", fontsize=16)
+        axvline(genome_size[self.name.split("_")[0]], ls="--", color="k", zorder=20)
+        ylabel("Assembler method", fontsize=16)
+        _ = gca().set_yticklabels(gca().get_yticklabels(), ha='left')
+        gca().tick_params(axis='y', pad=80)
+        _ = xticks(fontsize=12)
+        _ = yticks(fontsize=12)
+        gca().invert_yaxis()
+
+        ax = gca()
+        ax2 = ax.twinx()
+        ax2.set_ylim(ax.get_ylim())  # synchronize y-axis
+        ax2.set_yticks(range(len(pivot)))
+        ax2.set_yticklabels([(pivot > 0).sum(axis=1)[name] for name in pivot.index])
+        ax2.tick_params(axis='y', length=0)  # hide tick marks
+        ax2.set_ylabel('Count')
+
+        ax.set_axisbelow(True)     # draw grid under bars
+        ax.grid(True, axis="y", linestyle="-", color="0.8")  # style as you like
+        tight_layout()
+
+        return df_sorted
+    
