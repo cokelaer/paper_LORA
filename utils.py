@@ -225,3 +225,10 @@ def download_veillonella_data():
     else:
         print("veillonella.ccs.fastq.gz already present")
 
+def download_cyanobacteria_data():
+    os.makedirs("data/cyanobacteria", exist_ok=True)
+
+    if os.path.exists("data/cyanobacteria/PCC6711.fastq.gz") is False:
+        # You can run fastq-dump ERR3958992 to get the fastq file, or for this notebook simply call:
+        download_data("https://zenodo.org/records/17229238/files/PCC6711.fastq.gz", "data/cyanobacteria")
+
