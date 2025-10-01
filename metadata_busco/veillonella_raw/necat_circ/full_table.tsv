@@ -1,0 +1,127 @@
+# BUSCO version is: 5.4.6 
+# The lineage dataset is: bacteria_odb10 (Creation date: 2024-01-08, number of genomes: 4085, number of BUSCOs: 124)
+# Busco id	Status	Sequence	Gene Start	Gene End	Strand	Score	Length	OrthoDB url	Description
+4421at2	Complete	ctg1	2128287	2132489	+	1682.3	1093	https://v10-1.orthodb.org/?query=4421at2	DNA-directed RNA polymerase subunit beta'
+9601at2	Complete	ctg1	2124040	2128257	+	1293.4	797	https://v10-1.orthodb.org/?query=9601at2	DNA-directed RNA polymerase, subunit 2, hybrid-binding domain
+26038at2	Complete	ctg1	1280161	1283901	+	252.8	411	https://v10-1.orthodb.org/?query=26038at2	PurM-like, C-terminal domain
+91428at2	Fragmented	ctg1	876088	877119	-	324.3	249	https://v10-1.orthodb.org/?query=91428at2	Alanine--tRNA ligase
+95696at2	Missing
+143460at2	Missing
+182107at2	Missing
+219876at2	Missing
+223233at2	Complete	ctg1	292481	294802	+	124.9	441	https://v10-1.orthodb.org/?query=223233at2	DNA topoisomerase, type IA
+226836at2	Complete	ctg1	907045	908862	-	595.6	472	https://v10-1.orthodb.org/?query=226836at2	Aminoacyl-tRNA synthetase, class II
+232152at2	Complete	ctg1	1825954	1827237	+	317.2	288	https://v10-1.orthodb.org/?query=232152at2	adenylosuccinate synthase
+267682at2	Complete	ctg1	1274027	1275445	-	268.6	290	https://v10-1.orthodb.org/?query=267682at2	Amidophosphoribosyltransferase
+353391at2	Complete	ctg1	158442	159722	+	408.4	338	https://v10-1.orthodb.org/?query=353391at2	Serine--tRNA ligase
+384865at2	Fragmented	ctg1	456459	457046	+	123.5	122	https://v10-1.orthodb.org/?query=384865at2	Transcription termination/antitermination protein NusA
+402899at2	Complete	ctg1	745095	746174	-	286.5	277	https://v10-1.orthodb.org/?query=402899at2	Tyrosine--tRNA ligase
+430176at2	Fragmented	ctg1	2092071	2093345	+	566.8	353	https://v10-1.orthodb.org/?query=430176at2	ATPase, F1/V1/A1 complex, alpha/beta subunit, N-terminal domain
+462069at2	Complete	ctg1	774883	775971	-	136.3	228	https://v10-1.orthodb.org/?query=462069at2	Phosphoglycerate kinase
+469058at2	Complete	ctg1	756155	757177	-	426.3	292	https://v10-1.orthodb.org/?query=469058at2	Phenylalanine--tRNA ligase alpha subunit
+504464at2	Fragmented	ctg1	1469599	1470237	-	200.9	147	https://v10-1.orthodb.org/?query=504464at2	GMP synthase
+505485at2	Fragmented	ctg1	702093	702614	-	98.7	108	https://v10-1.orthodb.org/?query=505485at2	Ribosomal protein S5 domain 2-type fold
+533698at2	Complete	ctg1	771078	772361	-	379.7	283	https://v10-1.orthodb.org/?query=533698at2	Enolase
+662686at2	Complete	ctg1	3867	4871	+	242.1	207	https://v10-1.orthodb.org/?query=662686at2	DNA-directed RNA polymerase subunit alpha
+665824at2	Complete	ctg1	539098	540816	+	751.0	540	https://v10-1.orthodb.org/?query=665824at2	Proline--tRNA ligase
+761140at2	Complete	ctg1	274483	276429	+	190.2	318	https://v10-1.orthodb.org/?query=761140at2	Methionine--tRNA ligase
+776861at2	Complete	ctg1	503507	504190	+	244.4	208	https://v10-1.orthodb.org/?query=776861at2	Cytidylate kinase
+837522at2	Complete	ctg1	2089504	2091042	+	663.0	406	https://v10-1.orthodb.org/?query=837522at2	ATP synthase subunit alpha
+841869at2	Fragmented	ctg1	1061989	1062723	-	136.0	156	https://v10-1.orthodb.org/?query=841869at2	UDP-N-acetylenolpyruvoylglucosamine reductase
+874197at2	Complete	ctg1	242588	243592	+	423.5	272	https://v10-1.orthodb.org/?query=874197at2	Holliday junction ATP-dependent DNA helicase RuvB
+923547at2	Fragmented	ctg1	1273186	1274040	-	383.1	254	https://v10-1.orthodb.org/?query=923547at2	Phosphoribosylformylglycinamidine cyclo-ligase
+932854at2	Complete	ctg1	1269398	1270660	-	646.0	414	https://v10-1.orthodb.org/?query=932854at2	Phosphoribosylamine--glycine ligase
+932993at2	Complete	ctg1	969671	970975	-	91.3	249	https://v10-1.orthodb.org/?query=932993at2	Trigger factor
+961486at2	Complete	ctg1	2141646	2142446	+	230.8	175	https://v10-1.orthodb.org/?query=961486at2	Ribosomal protein L2
+981870at2	Complete	ctg1	1994011	1995105	-	236.0	267	https://v10-1.orthodb.org/?query=981870at2	Chorismate synthase
+984717at2	Complete	ctg1	665925	666824	-	221.4	213	https://v10-1.orthodb.org/?query=984717at2	GTPase Era
+1009041at2	Complete	ctg1	790781	791821	-	248.7	223	https://v10-1.orthodb.org/?query=1009041at2	Cell division protein FtsZ
+1024388at2	Complete	ctg1	518525	519715	+	445.8	306	https://v10-1.orthodb.org/?query=1024388at2	S-adenosylmethionine synthetase
+1036075at2	Missing
+1043239at2	Fragmented	ctg1	532901	533422	+	134.6	117	https://v10-1.orthodb.org/?query=1043239at2	Uridylate kinase
+1049662at2	Fragmented	ctg1	1271114	1272337	-	415.1	315	https://v10-1.orthodb.org/?query=1049662at2	Methylglyoxal synthase-like domain
+1054741at2	Fragmented	ctg1	553284	553943	+	199.2	200	https://v10-1.orthodb.org/?query=1054741at2	tRNA-specific 2-thiouridylase
+1069591at2	Complete	ctg1	550518	551447	+	132.4	147	https://v10-1.orthodb.org/?query=1069591at2	tRNA dimethylallyltransferase
+1074831at2	Complete	ctg1	599247	600605	+	171.8	366	https://v10-1.orthodb.org/?query=1074831at2	DNA repair protein RecN
+1080436at2	Complete	ctg1	895103	896143	-	390.8	259	https://v10-1.orthodb.org/?query=1080436at2	Protein RecA
+1093223at2	Complete	ctg1	797344	798714	-	302.4	323	https://v10-1.orthodb.org/?query=1093223at2	Mur ligase, C-terminal
+1132353at2	Complete	ctg1	2143148	2143816	+	205.9	160	https://v10-1.orthodb.org/?query=1132353at2	K Homology domain
+1151822at2	Complete	ctg1	2084299	2085450	+	126.6	250	https://v10-1.orthodb.org/?query=1151822at2	Phospho-N-acetylmuramoyl-pentapeptide-transferase
+1166299at2	Complete	ctg1	461704	462642	+	102.6	119	https://v10-1.orthodb.org/?query=1166299at2	tRNA pseudouridine synthase B
+1211060at2	Complete	ctg1	19426	20013	+	183.5	163	https://v10-1.orthodb.org/?query=1211060at2	RNA-binding S4 domain
+1257362at2	Fragmented	ctg1	721644	722006	-	112.9	101	https://v10-1.orthodb.org/?query=1257362at2	tRNA N6-adenosine threonylcarbamoyltransferase
+1266295at2	Fragmented	ctg1	774019	774591	-	260.5	180	https://v10-1.orthodb.org/?query=1266295at2	Triosephosphate isomerase
+1270636at2	Complete	ctg1	2140044	2140685	+	165.7	161	https://v10-1.orthodb.org/?query=1270636at2	Ribosomal protein L3
+1272633at2	Complete	ctg1	803170	803886	-	106.4	128	https://v10-1.orthodb.org/?query=1272633at2	S-adenosyl-L-methionine-dependent methyltransferase
+1346419at2	Complete	ctg1	515419	516624	+	324.6	291	https://v10-1.orthodb.org/?query=1346419at2	Flavoprotein
+1395197at2	Complete	ctg1	535828	537999	+	123.4	171	https://v10-1.orthodb.org/?query=1395197at2	Peptidase M50
+1398618at2	Fragmented	ctg1	2146966	2147313	+	120.7	93	https://v10-1.orthodb.org/?query=1398618at2	Ribosomal protein L6, alpha-beta domain
+1419877at2	Complete	ctg1	508741	509739	+	238.7	259	https://v10-1.orthodb.org/?query=1419877at2	glycerol-3-phosphate dehydrogenase
+1456375at2	Complete	ctg1	2145502	2146041	+	226.2	142	https://v10-1.orthodb.org/?query=1456375at2	Ribosomal protein L5
+1470978at2	Complete	ctg1	2119426	2119956	+	90.0	104	https://v10-1.orthodb.org/?query=1470978at2	Ribosomal protein L10
+1490892at2	Complete	ctg1	563615	564346	+	43.7	93	https://v10-1.orthodb.org/?query=1490892at2	16S rRNA (uracil(1498)-N(3))-methyltransferase
+1491686at2	Complete	ctg1	1276	1839	+	144.1	129	https://v10-1.orthodb.org/?query=1491686at2	Adenylate kinase
+1497415at2	Complete	ctg1	234861	235358	+	26.9	26	https://v10-1.orthodb.org/?query=1497415at2	Ribosome maturation factor RimM
+1502854at2	Complete	ctg1	514517	515146	+	246.9	187	https://v10-1.orthodb.org/?query=1502854at2	Guanylate kinase
+1504821at2	Complete	ctg1	462645	463577	+	158.1	218	https://v10-1.orthodb.org/?query=1504821at2	Riboflavin kinase
+1505038at2	Complete	ctg1	2147730	2148233	+	223.4	148	https://v10-1.orthodb.org/?query=1505038at2	Ribosomal protein S5
+1540940at2	Complete	ctg1	2135740	2136210	+	205.1	133	https://v10-1.orthodb.org/?query=1540940at2	Ribosomal protein S7 domain
+1567535at2	Complete	ctg1	1	1263	+	332.6	326	https://v10-1.orthodb.org/?query=1567535at2	Protein translocase subunit SecY
+1572673at2	Complete	ctg1	2140712	2141335	+	124.2	113	https://v10-1.orthodb.org/?query=1572673at2	50S ribosomal protein L4
+1574817at2	Complete	ctg1	591997	592401	+	107.5	137	https://v10-1.orthodb.org/?query=1574817at2	Transcription antitermination protein NusB
+1590629at2	Complete	ctg1	1734338	1735090	+	65.0	88	https://v10-1.orthodb.org/?query=1590629at2	rRNA small subunit methyltransferase G
+1592033at2	Missing
+1595498at2	Complete	ctg1	455748	456206	+	41.1	40	https://v10-1.orthodb.org/?query=1595498at2	Ribosome maturation factor RimP
+1623045at2	Missing
+1661836at2	Complete	ctg1	1973333	1973929	+	153.4	151	https://v10-1.orthodb.org/?query=1661836at2	Recombination protein RecR
+1666043at2	Complete	ctg1	2142796	2143131	+	114.7	85	https://v10-1.orthodb.org/?query=1666043at2	Ribosomal protein L22/L17
+1671455at2	Fragmented	ctg1	2118680	2119249	+	197.1	148	https://v10-1.orthodb.org/?query=1671455at2	Ribosomal protein L1
+1674344at2	Fragmented	ctg1	533428	533745	+	98.3	69	https://v10-1.orthodb.org/?query=1674344at2	Ribosome recycling factor
+1676462at2	Complete	ctg1	268119	268697	+	129.5	133	https://v10-1.orthodb.org/?query=1676462at2	Peptidyl-tRNA hydrolase
+1692188at2	Fragmented	ctg1	2146500	2146742	+	120.2	76	https://v10-1.orthodb.org/?query=1692188at2	Ribosomal protein S8
+1698718at2	Complete	ctg1	654027	654368	-	127.5	89	https://v10-1.orthodb.org/?query=1698718at2	Ribosomal protein L19
+1701531at2	Complete	ctg1	2091046	2091900	+	165.7	148	https://v10-1.orthodb.org/?query=1701531at2	ATP synthase, F1 complex, gamma subunit
+1702697at2	Fragmented	ctg1	2118037	2118315	+	80.7	62	https://v10-1.orthodb.org/?query=1702697at2	Ribosomal protein L11, C-terminal
+1707228at2	Complete	ctg1	2135313	2135687	+	180.4	100	https://v10-1.orthodb.org/?query=1707228at2	Ribosomal protein S12, bacterial-type
+1713391at2	Complete	ctg1	3406	3828	+	151.4	93	https://v10-1.orthodb.org/?query=1713391at2	Ribosomal protein S11
+1720952at2	Complete	ctg1	689195	689665	-	197.4	140	https://v10-1.orthodb.org/?query=1720952at2	SsrA-binding protein
+1758685at2	Missing
+1760144at2	Fragmented	ctg1	861845	862099	-	47.6	50	https://v10-1.orthodb.org/?query=1760144at2	Translation initiation factor 3, C-terminal
+1766414at2	Complete	ctg1	22531	22923	+	123.9	98	https://v10-1.orthodb.org/?query=1766414at2	Ribosomal protein S9
+1772647at2	Complete	ctg1	3018	3386	+	145.1	99	https://v10-1.orthodb.org/?query=1772647at2	Ribosomal protein S13
+1776954at2	Fragmented	ctg1	1303559	1303666	-	25.5	27	https://v10-1.orthodb.org/?query=1776954at2	Ribosomal protein S6
+1786618at2	Complete	ctg1	2143816	2144253	+	158.1	102	https://v10-1.orthodb.org/?query=1786618at2	Ribosomal protein L16
+1799923at2	Complete	ctg1	2144771	2145139	+	135.6	103	https://v10-1.orthodb.org/?query=1799923at2	Ribosomal protein L14P
+1822215at2	Complete	ctg1	22070	22510	+	160.8	111	https://v10-1.orthodb.org/?query=1822215at2	Ribosomal protein L13
+1822695at2	Complete	ctg1	2119995	2120363	+	86.8	83	https://v10-1.orthodb.org/?query=1822695at2	Ribosomal protein L7/L12
+1827295at2	Complete	ctg1	723194	723688	-	65.6	71	https://v10-1.orthodb.org/?query=1827295at2	tRNA threonylcarbamoyl adenosine modification protein TsaE
+1827334at2	Complete	ctg1	509807	510358	+	81.3	81	https://v10-1.orthodb.org/?query=1827334at2	methyltransferase
+1830156at2	Complete	ctg1	666817	667293	-	75.9	65	https://v10-1.orthodb.org/?query=1830156at2	Endoribonuclease YbeY
+1838961at2	Complete	ctg1	4884	5219	+	99.0	98	https://v10-1.orthodb.org/?query=1838961at2	Ribosomal protein L17
+1842956at2	Complete	ctg1	145063	146037	+	50.5	85	https://v10-1.orthodb.org/?query=1842956at2	Biotin--acetyl-CoA-carboxylase ligase
+1844275at2	Complete	ctg1	216696	217646	+	167.3	182	https://v10-1.orthodb.org/?query=1844275at2	Aspartate carbamoyltransferase
+1846503at2	Complete	ctg1	510363	510854	+	112.5	106	https://v10-1.orthodb.org/?query=1846503at2	pantetheine-phosphate adenylyltransferase
+1874945at2	Complete	ctg1	2148450	2148896	+	79.6	69	https://v10-1.orthodb.org/?query=1874945at2	Ribosomal protein L15
+1890943at2	Complete	ctg1	369528	370268	+	60.3	89	https://v10-1.orthodb.org/?query=1890943at2	ribonuclease III
+1893906at2	Complete	ctg1	2142501	2142782	+	138.2	70	https://v10-1.orthodb.org/?query=1893906at2	Ribosomal protein S19, bacterial-type
+1904463at2	Complete	ctg1	924670	924954	-	117.9	65	https://v10-1.orthodb.org/?query=1904463at2	Ribosomal protein L27
+1906715at2	Complete	ctg1	559111	559656	+	51.1	90	https://v10-1.orthodb.org/?query=1906715at2	Protein GrpE
+1932144at2	Fragmented	ctg1	861288	861578	-	97.2	75	https://v10-1.orthodb.org/?query=1932144at2	Ribosomal protein L20
+1937072at2	Complete	ctg1	233926	234189	+	98.7	69	https://v10-1.orthodb.org/?query=1937072at2	Ribosomal protein S16
+1937493at2	Complete	ctg1	2088936	2089487	+	120.2	156	https://v10-1.orthodb.org/?query=1937493at2	ATP synthase subunit delta
+1940575at2	Complete	ctg1	1302695	1302925	-	84.5	47	https://v10-1.orthodb.org/?query=1940575at2	Ribosomal protein S18
+1949059at2	Complete	ctg1	925284	925595	-	142.2	99	https://v10-1.orthodb.org/?query=1949059at2	Ribosomal protein L21
+1959318at2	Complete	ctg1	1900260	1900622	+	68.8	80	https://v10-1.orthodb.org/?query=1959318at2	Ribosomal protein L9
+1963491at2	Complete	ctg1	2147349	2147711	+	138.1	102	https://v10-1.orthodb.org/?query=1963491at2	Ribosomal protein L18
+1971380at2	Complete	ctg1	460381	460737	+	120.4	111	https://v10-1.orthodb.org/?query=1971380at2	Ribosome-binding factor A
+1978865at2	Complete	ctg1	2141335	2141619	+	120.2	90	https://v10-1.orthodb.org/?query=1978865at2	Ribosomal protein L25/L23
+1990141at2	Complete	ctg1	438083	438349	+	111.0	66	https://v10-1.orthodb.org/?query=1990141at2	Ribosomal protein S15
+1990650at2	Complete	ctg1	492407	492769	+	81.5	84	https://v10-1.orthodb.org/?query=1990650at2	Ribosomal silencing factor RsfS
+2005443at2	Complete	ctg1	450308	450568	-	59.7	70	https://v10-1.orthodb.org/?query=2005443at2	Ribosomal protein S20
+2012682at2	Complete	ctg1	2139720	2140031	+	139.5	87	https://v10-1.orthodb.org/?query=2012682at2	Ribosomal protein S10
+2035880at2	Complete	ctg1	2144486	2144746	+	82.5	56	https://v10-1.orthodb.org/?query=2035880at2	Ribosomal protein S17/S11
+2040741at2	Complete	ctg1	2145158	2145478	+	57.4	46	https://v10-1.orthodb.org/?query=2040741at2	Ribosomal protein L24
+2046660at2	Missing
+2063644at2	Complete	ctg1	2144243	2144446	+	52.8	33	https://v10-1.orthodb.org/?query=2063644at2	Ribosomal protein L29/L35
+2066663at2	Fragmented	ctg1	2637	2807	+	38.9	30	https://v10-1.orthodb.org/?query=2066663at2	Translation initiation factor IF-1
+2075502at2	Complete	ctg1	873668	874087	-	50.6	58	https://v10-1.orthodb.org/?query=2075502at2	YqgF/RNase H-like domain
