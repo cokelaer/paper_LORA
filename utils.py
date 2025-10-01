@@ -1,4 +1,5 @@
 # Author: Thomas Cokelaer, 2025
+import os
 import glob
 from tqdm import tqdm
 import pandas as pd
@@ -17,6 +18,7 @@ genome_size = {
 
 def download_data(url, dest_dir="data/"):
     cmd = f"wget -q -P {dest_dir} {url}"
+    print("Downloading. please be patient")
     subprocess.call(cmd.split())
 
 def saveall(filename):
@@ -200,4 +202,19 @@ class PlotContigs:
         tight_layout()
 
         return df_sorted
-    
+
+def download_veillonella_data():
+    os.makedirs("data/veillonella", exist_ok=True)
+
+    if os.path.exists("data/veillonella/m54091_180306_141024.subreads.fastq.gz") is False:
+        # You can run fastq-dump ERR3958992 to get the fastq file, or for this notebook simply call:
+        download_data("https://zenodo.org/records/13306684/files/m54091_180306_141024.subreads.fastq.gz", "data/veillonella")
+    else:
+        print("m54091_180306_141024.subreads.fastq.gz already present")
+
+    if os.path.exists("data/veillonella/veillonella.ccs.fastq.gz") is False:
+        # for the CCS file, call:
+        download_data("https://zenodo.org/records/13306684/files/veillonella.ccs.fastq.gz", "data/veillonella")
+    else:
+        print("veillonella.ccs.fastq.gz already present")
+
