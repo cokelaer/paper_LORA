@@ -9,7 +9,8 @@ The notebook are as follows:
 ressources.ipynb creates figures related to CPU and memory usage
 - [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cokelaer/paper_LORA/HEAD?urlpath=%2Fdoc%2Ftree%2Fveillonella.ipynb)
  veillonella.ipynb creates figures related to veillonella case (assembly / busco / checkm / stats)
-- leishmania.ipynb creates figures related to leishmania case (assembly / busco / checkm / stats)
+- [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cokelaer/paper_LORA/HEAD?urlpath=%2Fdoc%2Ftree%2Fleishmania.ipynb) 
+  leishmania.ipynb creates figures related to leishmania case (assembly / busco / checkm / stats)
 - [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cokelaer/paper_LORA/HEAD?urlpath=%2Fdoc%2Ftree%2Fcyanobacteria.ipynb)
   cyanobacteria.ipynb creates figures related to cyanobacteria case (assembly / busco / checkm / stats)
 - [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cokelaer/paper_LORA/HEAD?urlpath=%2Fdoc%2Ftree%2Fstreptococcus.ipynb) 
