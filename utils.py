@@ -1,4 +1,5 @@
 # Author: Thomas Cokelaer, 2025
+import time
 import os
 import glob
 from tqdm import tqdm
@@ -21,16 +22,56 @@ def download_data(url, dest_dir="data/"):
     os.makedirs(dest_dir, exist_ok=True)
     filename = os.path.join(dest_dir, os.path.basename(url))
     if os.path.exists(filename):
-        print(f"{filename} already present")
+        print(f"✅ {filename} already exists, skipping.")
     else:
         print(f"Downloading {url} to {filename} ...")
         wget.download(url, out=filename)  # shows progress bar
-        print("\nDownload complete.")
+        print(f"✅ Download complete: {outfile}")
+
+def download_SRR_with_progress(accession, outdir, expected_size=None):
+    os.makedirs(outdir, exist_ok=True)
+    outfile = os.path.join(outdir, f"{accession}.fastq.gz")
+
+    # Skip if already exists
+    if os.path.exists(outfile):
+        print(f"✅ {outfile} already exists, skipping.")
+        return
+
+    # Launch fastq-dump
+    cmd = f"fastq-dump --gzip -O {outdir} {accession}"
+    print(f"🚀 Running: {cmd}")
+    process = subprocess.Popen(cmd, shell=True)
+
+    # Track progress
+    if expected_size:
+        pbar = tqdm(total=expected_size, unit="B", unit_scale=True)
+        while process.poll() is None:
+            if os.path.exists(outfile):
+                size = os.path.getsize(outfile)
+                pbar.n = size
+                pbar.refresh()
+            time.sleep(5)
+        pbar.close()
+    else:
+        process.wait()
+
+    if process.returncode == 0:
+        print(f"✅ Download complete: {outfile}")
+    else:
+        print("❌ fastq-dump failed!")
 
 
-def saveall(filename):
+
+def saveall(filename, dpi=200):
+    outdir = os.path.dirname(filename)
+    if outdir and not os.path.exists(outdir):
+        os.makedirs(outdir, exist_ok=True)
+
+    # Save in all formats
     for ext in ["png", "pdf", "eps"]:
-        savefig(f"{filename}.{ext}", dpi=200)
+        outfile = f"{filename}.{ext}"
+        savefig(outfile, dpi=dpi, bbox_inches="tight")
+    print(f"💾 Saved {outfile} in pdf/eps/png")
 
 def to_seconds(x):
     if "-" in x:
@@ -240,4 +281,14 @@ def download_cyanobacteria_data():
     if os.path.exists("data/cyanobacteria/PCC6711.fastq.gz") is False:
         # You can run fastq-dump ERR3958992 to get the fastq file, or for this notebook simply call:
         download_data("https://zenodo.org/records/17229238/files/PCC6711.fastq.gz", "data/cyanobacteria")
+
+
+def download_streptococcus_data():
+    os.makedirs("data/streptococcus", exist_ok=True)
+
+    if os.path.exists("data/streptococcus/hifi.ccs.fastq.gz") is False:
+        # You can run fastq-dump ERR3958992 to get the fastq file, or for this notebook simply call:
+        download_data("https://zenodo.org/records/17207091/files/hifi.ccs.fastq.gz", "data/streptococcus")
+
+    download_SRR_with_progress("SRR24332397", "data/streptococcus", 7.08e9)
 
