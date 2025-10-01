@@ -10,6 +10,7 @@ dependencies:
   - shustring
   - tqdm
   - sequana
+  - matplotlib
   - pip
   - pip:
       - mypiptool
