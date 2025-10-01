@@ -1,5 +1,8 @@
 # paper_LORA
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cokelaer/paper_LORA/HEAD?urlpath=%2Fdoc%2Ftree%2Fresources.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cokelaer/paper_LORA/HEAD?urlpath=%2Fdoc%2Ftree%2Fveillonella.ipynb)
+
 This repository contains notebook supporting the LORA paper. LORA main page is on https://github.com/sequana/lora
 The notebook can recreate the figures and download most of the data required to perform the analysis shown in the paper (long read assembly).
 
@@ -11,3 +14,8 @@ The notebook are as follows:
 - cyanobacteria.ipynb creates figures related to cyanobacteria case (assembly / busco / checkm / stats)
 - streptococcus.ipynb creates figures related to streptococcus case (assembly / busco / checkm / stats)
 - bacteroides_fragilis.ipynb creates figures related to bacteroides_fragilis case (assembly / busco / checkm / stats)
+
+This notebook can be executed with binder:
+
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cokelaer/paper_LORA/HEAD?urlpath=%2Fdoc%2Ftree%2Fresources.ipynb)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cokelaer/paper_LORA/HEAD?urlpath=%2Fdoc%2Ftree%2Fveillonella.ipynb)
