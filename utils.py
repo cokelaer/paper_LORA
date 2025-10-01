@@ -6,6 +6,7 @@ import pandas as pd
 from pylab import savefig, tight_layout, legend, xlim, xlabel, ylabel, axvline, xticks, yticks, gca
 from sequana import checkm, FastA, FastQ, BUSCO
 import subprocess
+import wget
 
 
 genome_size = {
@@ -17,9 +18,15 @@ genome_size = {
 }
 
 def download_data(url, dest_dir="data/"):
-    cmd = f"wget -q -P {dest_dir} {url}"
-    print("Downloading. please be patient")
-    subprocess.call(cmd.split())
+    os.makedirs(dest_dir, exist_ok=True)
+    filename = os.path.join(dest_dir, os.path.basename(url))
+    if os.path.exists(filename):
+        print(f"{filename} already present")
+    else:
+        print(f"Downloading {url} to {filename} ...")
+        wget.download(url, out=filename)  # shows progress bar
+        print("\nDownload complete.")
+
 
 def saveall(filename):
     for ext in ["png", "pdf", "eps"]:
