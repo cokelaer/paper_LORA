@@ -9,6 +9,7 @@ dependencies:
   - pandas
   - shustring
   - pip
+  - sra-tools
   - pip:
       - sequana
       - wget
