@@ -110,8 +110,10 @@ class CheckMFactory:
         assemblers = [x.split("/")[2] for x in glob.glob(f'metadata_busco_checkm/{name}/*//results.txt')]
         #samples = [x.split("/")[3] for x in glob.glob(f'final_analysis/{name}/*/*/checkm/results.txt')]
 
-        c = checkm.MultiCheckM(glob.glob(f'final_analysis/{name}/*/*/checkm/results.txt'))
+        c = checkm.MultiCheckM(glob.glob(f'metadata_busco_checkm/{name}/*/results.txt'))
         c.df.columns = [x.replace("_nocirc", "").replace("_circ", " circ") for x in assemblers]
+
+        self.c = c
         df_grouped = c.df.T
         #df_grouped["sample"] = samples
         df_grouped['assembler'] = df_grouped.index
@@ -137,12 +139,20 @@ class CheckMFactory:
 class PlotContigs:
     def __init__(self, name):
         self.name = name
-        self.df = self._get_contigs_df(name)
+        filename = f"metadata_contigs/{name}.contigs.csv"
+        if os.path.exists(filename) is True:
+            print("Reading file")
+            self.df = pd.read_csv(filename)
+        else:
+            print("Creating and saving file. You need FASTA files from final analysis. Not provided here but on Zenodo DOI in the github.com/cokelaer/paper_LORA.")
+            self.df = self._get_contigs_df(name)
+            self.df.to_csv(filename, index=False, sep=",")
 
-    def _get_contigs_df(self,name):
+    def _get_contigs_df(self, name):
         assemblers = [x.split("/")[2] for x in glob.glob(f'final_analysis/{name}/*/*/sorted_contigs/*.fasta')]
         samples = [x.split("/")[3] for x in glob.glob(f'final_analysis/{name}/*/*/sorted_contigs/*fasta')]
         filenames = glob.glob(f'final_analysis/{name}/*/*/sorted_contigs/*fasta')
+
         data = []
         for filename in filenames:
             f = FastA(filename)

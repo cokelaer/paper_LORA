@@ -1,0 +1,26 @@
+assembler,sample,length
+canu circ.,subsample_m54091_180306_141024,2167202
+canu,subsample_m54091_180306_141024,1972
+canu,subsample_m54091_180306_141024,2167405
+flye circ.,subsample_m54091_180306_141024,2146485
+flye,subsample_m54091_180306_141024,2146485
+necat circ.,subsample_m54091_180306_141024,2148897
+necat,subsample_m54091_180306_141024,2148901
+pecat circ.,subsample_m54091_180306_141024,2149636
+pecat,subsample_m54091_180306_141024,2148536
+unicycler circ.,subsample_m54091_180306_141024,24532
+unicycler circ.,subsample_m54091_180306_141024,34205
+unicycler circ.,subsample_m54091_180306_141024,47670
+unicycler circ.,subsample_m54091_180306_141024,57697
+unicycler circ.,subsample_m54091_180306_141024,58989
+unicycler circ.,subsample_m54091_180306_141024,594050
+unicycler circ.,subsample_m54091_180306_141024,1546671
+unicycler,subsample_m54091_180306_141024,24532
+unicycler,subsample_m54091_180306_141024,34205
+unicycler,subsample_m54091_180306_141024,47670
+unicycler,subsample_m54091_180306_141024,57697
+unicycler,subsample_m54091_180306_141024,58989
+unicycler,subsample_m54091_180306_141024,594050
+unicycler,subsample_m54091_180306_141024,1546671
+hifiasm circ.,none,0
+hifiasm,none,0
