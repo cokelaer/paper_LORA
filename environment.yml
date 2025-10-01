@@ -8,10 +8,7 @@ dependencies:
   - numpy
   - pandas
   - shustring
-  - tqdm
-  - sequana
-  - matplotlib
   - pip
   - pip:
-      - mypiptool
+      - sequana
 
