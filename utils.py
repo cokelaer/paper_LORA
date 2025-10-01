@@ -26,7 +26,7 @@ def download_data(url, dest_dir="data/"):
     else:
         print(f"Downloading {url} to {filename} ...")
         wget.download(url, out=filename)  # shows progress bar
-        print(f"✅ Download complete: {outfile}")
+        print(f"✅ Download complete: {filename}")
 
 def download_SRR_with_progress(accession, outdir, expected_size=None):
     os.makedirs(outdir, exist_ok=True)
