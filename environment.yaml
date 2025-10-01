@@ -1,0 +1,16 @@
+name: mybinder-env
+channels:
+  - conda-forge
+  - bioconda  # if you need bioinformatics tools
+  - defaults
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - shustring
+  - tqdm
+  - sequana
+  - pip
+  - pip:
+      - mypiptool
+
