@@ -1,8 +1,12 @@
 # paper_LORA
 
+[![DOI](https://zenodo.org/badge/1067413189.svg)](https://doi.org/10.5281/zenodo.17250176)
 
-This repository contains notebook supporting the LORA paper. LORA main page is on https://github.com/sequana/lora
-The notebook can recreate the figures and download most of the data required to perform the analysis shown in the paper (long read assembly).
+
+LORA stands for LOnd Read Assembly. LORA main page is on https://github.com/sequana/lora , and LORA is part of the Sequana project (https://github.com/sequana/sequana).
+
+This repository contains notebook supporting the LORA paper. 
+The notebook can recreate the figures and download most of the data required to perform the analysis shown in the paper.
 
 The notebook are as follows:
 - [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cokelaer/paper_LORA/HEAD?urlpath=%2Fdoc%2Ftree%2Fresources.ipynb)
