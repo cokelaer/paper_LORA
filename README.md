@@ -8,6 +8,11 @@ LORA stands for LOnd Read Assembly. LORA main page is on https://github.com/sequ
 This repository contains notebook supporting the LORA paper. 
 The notebook can recreate the figures and download most of the data required to perform the analysis shown in the paper.
 
+To run them, you need to create a conda environment. You can use the file environment.yml provided in this repository.
+
+We also created binder links towards each individual notebook. The veillonella.ipynb, resources.ipynb should work via Binder. Others may not depending of network connection.
+
+
 The notebook are as follows:
 - [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cokelaer/paper_LORA/HEAD?urlpath=%2Fdoc%2Ftree%2Fresources.ipynb)
 ressources.ipynb creates figures related to CPU and memory usage
