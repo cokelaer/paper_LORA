@@ -1,6 +1,7 @@
 # 📄 paper_LORA
 
-[![DOI](https://zenodo.org/badge/1067413189.svg)](https://doi.org/10.5281/zenodo.17250176)
+[![DOI](https://img.shields.io/badge/DOI-10.5281/zenodo.17250177-blue)](https://doi.org/10.5281/zenodo.17250177)
+
 
 This repository contains the Jupyter notebooks supporting the **LORA (LOng Read Assembly)** paper.  
 LORA is part of the Sequana project:
