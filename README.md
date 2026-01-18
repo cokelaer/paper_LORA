@@ -60,7 +60,7 @@ Binder is therefore best suited for quick inspection rather than full execution.
 Each notebook contains the complete workflow used to produce the figures in the paper.
 
 - resources.ipynb – CPU and memory usage - [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cokelaer/paper_LORA/HEAD?urlpath=%2Fdoc%2Ftree%2Fresources.ipynb)
-- veillonella.ipynb - Assembly, BUSCO, checkm, statitstics - [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cokelaer/paper_LORA/HEAD?urlpath=%2Fdoc%2Ftree%2Fveillonella.ipynb)
+- veillonella.ipynb - Assembly, BUSCO, checkm, statistics - [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cokelaer/paper_LORA/HEAD?urlpath=%2Fdoc%2Ftree%2Fveillonella.ipynb)
 - leishmania.ipynb - [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cokelaer/paper_LORA/HEAD?urlpath=%2Fdoc%2Ftree%2Fleishmania.ipynb) 
 - cyanobacteria.ipynb - [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cokelaer/paper_LORA/HEAD?urlpath=%2Fdoc%2Ftree%2Fcyanobacteria.ipynb)
 - streptococcus.ipynb - [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/cokelaer/paper_LORA/HEAD?urlpath=%2Fdoc%2Ftree%2Fstreptococcus.ipynb) 
